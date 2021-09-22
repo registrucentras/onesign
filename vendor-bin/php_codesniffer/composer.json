@@ -1,0 +1,9 @@
+{
+    "require": {
+        "php": "^7.2.5",
+        "squizlabs/php_codesniffer": "*"
+    },
+    "config": {
+        "preferred-install": "dist"
+    }
+}

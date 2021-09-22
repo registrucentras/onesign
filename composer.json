@@ -1,0 +1,56 @@
+{
+    "name": "gosign/onesign",
+    "description": "GoSign OneSign API client for PHP",
+    "keywords": ["GoSign", "OneSign", "GoSign API", "Elektroninis parašas"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "VĮ Registrų Centras",
+            "email": "pagalba@elektroninis.lt"
+        }
+    ],
+    "require": {
+        "php": "^7.2.5 || ^8.0",
+        "ext-json": "*",
+        "php-http/cache-plugin": "^1.7.1",
+        "php-http/client-common": "^2.3",
+        "php-http/discovery": "^1.12",
+        "php-http/httplug": "^2.2",
+        "php-http/multipart-stream-builder": "^1.1.2",
+        "psr/cache": "^1.0",
+        "psr/http-client-implementation": "^1.0",
+        "psr/http-factory-implementation": "^1.0",
+        "psr/http-message": "^1.0",
+	"fig/http-message-util": "^1.1",
+        "symfony/polyfill-php80": "^1.17",
+	"meng-tian/php-soap-interpreter": "^1.0",
+	"gaarf/xml-to-php-array": "^1.0",
+	"spatie/array-to-xml": "^2.16"
+    },
+    "require-dev": {
+        "bamarni/composer-bin-plugin": "^1.4.1",
+        "guzzlehttp/guzzle": "^7.2",
+        "http-interop/http-factory-guzzle": "^1.0",
+        "php-http/mock-client": "^1.4.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "RegistruCentras\\OneSign\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "RegistruCentras\\OneSign\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+	"scripts": {
+        "test": "vendor/bin/phpunit phpstan-analyze psalm-analyze rector-dry-run",
+		"phpcs": "vendor/bin/phpcs",
+		"phpcbf": "vendor/bin/phpcbf",
+		"phpstan": "vendor/bin/phpstan analyse -c phpstan.neon",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    }
+}

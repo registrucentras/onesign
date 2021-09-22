@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files psalm-version="4.x-dev@">
+  <file src="src/Api/AbstractApi.php">
+    <PropertyNotSetInConstructor occurrences="1">
+      <code>$endpoint</code>
+    </PropertyNotSetInConstructor>
+  </file>
+  <file src="src/Client.php">
+    <PropertyNotSetInConstructor occurrences="4">
+      <code>$clientId</code>
+      <code>$passphrase</code>
+      <code>$privateKey</code>
+      <code>$publicKey</code>
+    </PropertyNotSetInConstructor>
+  </file>
+  <file src="src/Entity/Configuration.php">
+    <MissingConstructor occurrences="2">
+      <code>$responseUrl</code>
+      <code>$signingType</code>
+    </MissingConstructor>
+  </file>
+  <file src="src/Entity/SignatureConfiguration/DisplayProperties/AbsolutePosition.php">
+    <MissingConstructor occurrences="4">
+      <code>$height</code>
+      <code>$width</code>
+      <code>$x</code>
+      <code>$y</code>
+    </MissingConstructor>
+  </file>
+  <file src="src/Entity/SignatureConfiguration/DisplayProperties/NamedPosition.php">
+    <MissingConstructor occurrences="1">
+      <code>$fieldName</code>
+    </MissingConstructor>
+  </file>
+  <file src="src/Entity/SignatureConfiguration/DisplayProperties/RelativePosition.php">
+    <MissingConstructor occurrences="2">
+      <code>$x</code>
+      <code>$y</code>
+    </MissingConstructor>
+  </file>
+  <file src="src/Entity/SignatureConfiguration/DisplayProperties/Traits/WithSignatureInPage.php">
+    <MissingConstructor occurrences="2">
+      <code>$page</code>
+      <code>$page</code>
+    </MissingConstructor>
+  </file>
+  <file src="src/Entity/SignatureConfiguration/DisplayProperties/Traits/WithSignatureSize.php">
+    <MissingConstructor occurrences="2">
+      <code>$height</code>
+      <code>$width</code>
+    </MissingConstructor>
+  </file>
+  <file src="src/Entity/Transaction.php">
+    <MissingConstructor occurrences="1">
+      <code>$transactionId</code>
+    </MissingConstructor>
+  </file>
+  <file src="src/HttpClient/Builder.php">
+    <MixedArgumentTypeCoercion occurrences="1">
+      <code>$plugins</code>
+    </MixedArgumentTypeCoercion>
+    <MixedAssignment occurrences="1">
+      <code>$plugin</code>
+    </MixedAssignment>
+  </file>
+  <file src="src/HttpClient/DTO/Request/Adapter/CancelRequestAdapter.php">
+    <MixedInferredReturnType occurrences="1">
+      <code>RequestDTOInterface</code>
+    </MixedInferredReturnType>
+    <MixedReturnStatement occurrences="1"/>
+    <UndefinedInterfaceMethod occurrences="1">
+      <code>setTransactionId</code>
+    </UndefinedInterfaceMethod>
+  </file>
+  <file src="src/HttpClient/DTO/Request/Adapter/InitRequestAdapter.php">
+    <MixedArgument occurrences="2">
+      <code>$clientInfo</code>
+      <code>$file-&gt;getContent()</code>
+    </MixedArgument>
+    <MixedAssignment occurrences="7">
+      <code>$clientInfo</code>
+      <code>$file</code>
+      <code>$initRequestDTO</code>
+      <code>$initRequestDTO</code>
+      <code>$initRequestDTO</code>
+      <code>$metadata</code>
+      <code>$signatureDisplayProperties</code>
+    </MixedAssignment>
+    <MixedInferredReturnType occurrences="1">
+      <code>RequestDTOInterface</code>
+    </MixedInferredReturnType>
+    <MixedMethodCall occurrences="11">
+      <code>getContent</code>
+      <code>setAcceptableInfrastructure</code>
+      <code>setBackgroundImageUrl</code>
+      <code>setContact</code>
+      <code>setLocale</code>
+      <code>setResponseUrl</code>
+      <code>setSignatureImageUrl</code>
+      <code>setSigningType</code>
+      <code>withFileDigest</code>
+      <code>withSignatureDisplayProperties</code>
+      <code>withSignatureMetadata</code>
+    </MixedMethodCall>
+    <MixedReturnStatement occurrences="1">
+      <code>$initRequestDTO</code>
+    </MixedReturnStatement>
+    <UndefinedInterfaceMethod occurrences="5">
+      <code>setContent</code>
+      <code>setDisplayValidity</code>
+      <code>setFile</code>
+      <code>setLocation</code>
+      <code>setSignerPersonalCode</code>
+    </UndefinedInterfaceMethod>
+  </file>
+  <file src="src/HttpClient/DTO/Request/Adapter/ResultRequestAdapter.php">
+    <MixedInferredReturnType occurrences="1">
+      <code>RequestDTOInterface</code>
+    </MixedInferredReturnType>
+    <MixedReturnStatement occurrences="1"/>
+    <UndefinedInterfaceMethod occurrences="1">
+      <code>setTransactionId</code>
+    </UndefinedInterfaceMethod>
+  </file>
+  <file src="src/HttpClient/DTO/Request/Adapter/SealRequestAdapter.php">
+    <MixedArgument occurrences="1">
+      <code>$file-&gt;getContent()</code>
+    </MixedArgument>
+    <MixedAssignment occurrences="1">
+      <code>$file</code>
+    </MixedAssignment>
+    <MixedInferredReturnType occurrences="1">
+      <code>RequestDTOInterface</code>
+    </MixedInferredReturnType>
+    <MixedMethodCall occurrences="2">
+      <code>getContent</code>
+      <code>withFileDigest</code>
+    </MixedMethodCall>
+    <MixedReturnStatement occurrences="1"/>
+    <UndefinedInterfaceMethod occurrences="2">
+      <code>setContent</code>
+      <code>setFile</code>
+    </UndefinedInterfaceMethod>
+  </file>
+  <file src="src/HttpClient/DTO/Request/Adapter/TimestampRequestAdapter.php">
+    <MixedArgument occurrences="2">
+      <code>$clientInfo</code>
+      <code>$file-&gt;getContent()</code>
+    </MixedArgument>
+    <MixedAssignment occurrences="2">
+      <code>$clientInfo</code>
+      <code>$file</code>
+    </MixedAssignment>
+    <MixedInferredReturnType occurrences="1">
+      <code>RequestDTOInterface</code>
+    </MixedInferredReturnType>
+    <MixedMethodCall occurrences="3">
+      <code>getContent</code>
+      <code>setLocale</code>
+      <code>withFileDigest</code>
+    </MixedMethodCall>
+    <MixedReturnStatement occurrences="1"/>
+    <UndefinedInterfaceMethod occurrences="3">
+      <code>setContent</code>
+      <code>setFile</code>
+      <code>setSignerPersonalCode</code>
+    </UndefinedInterfaceMethod>
+  </file>
+  <file src="src/HttpClient/DTO/Request/Init/FileDTO.php">
+    <PossiblyNullArgument occurrences="2">
+      <code>$this-&gt;getContent()</code>
+      <code>$this-&gt;getFileDigest()</code>
+    </PossiblyNullArgument>
+  </file>
+  <file src="src/HttpClient/DTO/Request/InitRequestDTO.php">
+    <MissingConstructor occurrences="2">
+      <code>$clientInfo</code>
+      <code>$file</code>
+    </MissingConstructor>
+  </file>
+  <file src="src/HttpClient/DTO/Request/Seal/FileDTO.php">
+    <PossiblyNullArgument occurrences="2">
+      <code>$this-&gt;getContent()</code>
+      <code>$this-&gt;getFileDigest()</code>
+    </PossiblyNullArgument>
+  </file>
+  <file src="src/HttpClient/DTO/Request/SealRequestDTO.php">
+    <MissingConstructor occurrences="2">
+      <code>$clientInfo</code>
+      <code>$file</code>
+    </MissingConstructor>
+  </file>
+  <file src="src/HttpClient/DTO/Request/Timestamp/FileDTO.php">
+    <PossiblyNullArgument occurrences="2">
+      <code>$this-&gt;getContent()</code>
+      <code>$this-&gt;getFileDigest()</code>
+    </PossiblyNullArgument>
+  </file>
+  <file src="src/HttpClient/DTO/Request/TimestampRequestDTO.php">
+    <MissingConstructor occurrences="2">
+      <code>$clientInfo</code>
+      <code>$file</code>
+    </MissingConstructor>
+  </file>
+  <file src="src/HttpClient/DTO/Request/Traits/Stringable.php">
+    <MixedArgument occurrences="1">
+      <code>$arrayToXml-&gt;dropXmlDeclaration()-&gt;toXml()</code>
+    </MixedArgument>
+    <MixedMethodCall occurrences="1">
+      <code>toXml</code>
+    </MixedMethodCall>
+  </file>
+  <file src="src/HttpClient/DTO/Request/Traits/StringableWithFile.php">
+    <MixedArgument occurrences="1">
+      <code>$arrayToXml-&gt;dropXmlDeclaration()-&gt;toXml()</code>
+    </MixedArgument>
+    <MixedMethodCall occurrences="1">
+      <code>toXml</code>
+    </MixedMethodCall>
+  </file>
+  <file src="src/HttpClient/DTO/Request/Traits/WithClientDTO.php">
+    <MissingConstructor occurrences="4">
+      <code>$clientId</code>
+      <code>$clientId</code>
+      <code>$clientId</code>
+      <code>$clientId</code>
+    </MissingConstructor>
+  </file>
+  <file src="src/HttpClient/DTO/Request/Traits/WithClientInfoDTO.php">
+    <MissingConstructor occurrences="2">
+      <code>$clientId</code>
+      <code>$responseUrl</code>
+    </MissingConstructor>
+  </file>
+  <file src="src/HttpClient/DTO/Request/Traits/WithSignatureDTO.php">
+    <MissingConstructor occurrences="13">
+      <code>$signature</code>
+      <code>$signature</code>
+      <code>$signature</code>
+      <code>$signature</code>
+      <code>$signature</code>
+      <code>$signature</code>
+      <code>$signature</code>
+      <code>$signature</code>
+      <code>$signature</code>
+      <code>$signature</code>
+      <code>$signature</code>
+      <code>$signature</code>
+      <code>$signature</code>
+    </MissingConstructor>
+  </file>
+  <file src="src/HttpClient/DTO/Request/Traits/WithSigningTypeDTO.php">
+    <MissingConstructor occurrences="1">
+      <code>$signingType</code>
+    </MissingConstructor>
+  </file>
+  <file src="src/HttpClient/DTO/Request/Traits/WithTransactionDTO.php">
+    <MissingConstructor occurrences="2">
+      <code>$transactionId</code>
+      <code>$transactionId</code>
+    </MissingConstructor>
+  </file>
+  <file src="src/HttpClient/DTO/Response/CancelResponseDTO.php">
+    <MixedArgument occurrences="1">
+      <code>$arrayToXml-&gt;dropXmlDeclaration()-&gt;toXml()</code>
+    </MixedArgument>
+    <MixedMethodCall occurrences="1">
+      <code>toXml</code>
+    </MixedMethodCall>
+    <PropertyNotSetInConstructor occurrences="1">
+      <code>CancelResponseDTO</code>
+    </PropertyNotSetInConstructor>
+  </file>
+  <file src="src/HttpClient/DTO/Response/InitResponseDTO.php">
+    <MixedArgument occurrences="3">
+      <code>$this-&gt;response['signature']</code>
+      <code>$this-&gt;response['signingUrl']</code>
+      <code>$this-&gt;response['transactionId']</code>
+    </MixedArgument>
+    <PropertyNotSetInConstructor occurrences="2">
+      <code>InitResponseDTO</code>
+      <code>InitResponseDTO</code>
+    </PropertyNotSetInConstructor>
+  </file>
+  <file src="src/HttpClient/DTO/Response/Result/FileDTO.php">
+    <MixedArgument occurrences="1">
+      <code>$arrayToXml-&gt;dropXmlDeclaration()-&gt;toXml()</code>
+    </MixedArgument>
+    <MixedMethodCall occurrences="1">
+      <code>toXml</code>
+    </MixedMethodCall>
+    <PossiblyNullArgument occurrences="2">
+      <code>$this-&gt;getContent()</code>
+      <code>$this-&gt;getFileDigest()</code>
+    </PossiblyNullArgument>
+  </file>
+  <file src="src/HttpClient/DTO/Response/ResultResponseDTO.php">
+    <MixedArgument occurrences="6">
+      <code>$fileDTO</code>
+      <code>$file['content']</code>
+      <code>$file['fileDigest']</code>
+      <code>$this-&gt;response['signature']</code>
+      <code>$this-&gt;response['signerCertificate']</code>
+      <code>$this-&gt;response['status']</code>
+    </MixedArgument>
+    <MixedArrayAccess occurrences="3">
+      <code>$file['content']</code>
+      <code>$file['fileDigest']</code>
+      <code>$file['fileName']</code>
+    </MixedArrayAccess>
+    <MixedAssignment occurrences="2">
+      <code>$file</code>
+      <code>$fileDTO</code>
+    </MixedAssignment>
+    <MixedMethodCall occurrences="1">
+      <code>setContent</code>
+    </MixedMethodCall>
+    <PropertyNotSetInConstructor occurrences="2">
+      <code>$file</code>
+      <code>ResultResponseDTO</code>
+    </PropertyNotSetInConstructor>
+    <UndefinedInterfaceMethod occurrences="1">
+      <code>setFileName</code>
+    </UndefinedInterfaceMethod>
+  </file>
+  <file src="src/HttpClient/DTO/Response/Seal/FileDTO.php">
+    <MixedArgument occurrences="1">
+      <code>$arrayToXml-&gt;dropXmlDeclaration()-&gt;toXml()</code>
+    </MixedArgument>
+    <MixedMethodCall occurrences="1">
+      <code>toXml</code>
+    </MixedMethodCall>
+    <PossiblyNullArgument occurrences="2">
+      <code>$this-&gt;getContent()</code>
+      <code>$this-&gt;getFileDigest()</code>
+    </PossiblyNullArgument>
+  </file>
+  <file src="src/HttpClient/DTO/Response/SealResponseDTO.php">
+    <MixedArgument occurrences="6">
+      <code>$fileDTO</code>
+      <code>$file['content']</code>
+      <code>$file['fileDigest']</code>
+      <code>$this-&gt;response['signature']</code>
+      <code>$this-&gt;response['signerCertificate']</code>
+      <code>$this-&gt;response['status']</code>
+    </MixedArgument>
+    <MixedArrayAccess occurrences="3">
+      <code>$file['content']</code>
+      <code>$file['fileDigest']</code>
+      <code>$file['fileName']</code>
+    </MixedArrayAccess>
+    <MixedAssignment occurrences="2">
+      <code>$file</code>
+      <code>$fileDTO</code>
+    </MixedAssignment>
+    <MixedMethodCall occurrences="1">
+      <code>setContent</code>
+    </MixedMethodCall>
+    <PropertyNotSetInConstructor occurrences="4">
+      <code>$file</code>
+      <code>$signerCertificate</code>
+      <code>$signerCertificateTrusted</code>
+      <code>SealResponseDTO</code>
+    </PropertyNotSetInConstructor>
+    <UndefinedInterfaceMethod occurrences="1">
+      <code>setFileName</code>
+    </UndefinedInterfaceMethod>
+  </file>
+  <file src="src/HttpClient/DTO/Response/TimestampResponseDTO.php">
+    <MixedArgument occurrences="5">
+      <code>$fileDTO</code>
+      <code>$file['content']</code>
+      <code>$file['fileDigest']</code>
+      <code>$this-&gt;response['signature']</code>
+      <code>$this-&gt;response['status']</code>
+    </MixedArgument>
+    <MixedArrayAccess occurrences="3">
+      <code>$file['content']</code>
+      <code>$file['fileDigest']</code>
+      <code>$file['fileName']</code>
+    </MixedArrayAccess>
+    <MixedAssignment occurrences="2">
+      <code>$file</code>
+      <code>$fileDTO</code>
+    </MixedAssignment>
+    <MixedMethodCall occurrences="1">
+      <code>setContent</code>
+    </MixedMethodCall>
+    <PropertyNotSetInConstructor occurrences="2">
+      <code>$file</code>
+      <code>TimestampResponseDTO</code>
+    </PropertyNotSetInConstructor>
+    <UndefinedInterfaceMethod occurrences="1">
+      <code>setFileName</code>
+    </UndefinedInterfaceMethod>
+  </file>
+  <file src="src/HttpClient/DTO/Response/Traits/Stringable.php">
+    <MixedArgument occurrences="1">
+      <code>$arrayToXml-&gt;dropXmlDeclaration()-&gt;toXml()</code>
+    </MixedArgument>
+    <MixedMethodCall occurrences="1">
+      <code>toXml</code>
+    </MixedMethodCall>
+  </file>
+  <file src="src/HttpClient/Message/RequestMediator.php">
+    <MixedInferredReturnType occurrences="1">
+      <code>string</code>
+    </MixedInferredReturnType>
+    <MixedMethodCall occurrences="1">
+      <code>toXml</code>
+    </MixedMethodCall>
+    <MixedReturnStatement occurrences="1">
+      <code>$arrayToXml-&gt;dropXmlDeclaration()-&gt;toXml()</code>
+    </MixedReturnStatement>
+  </file>
+  <file src="src/HttpClient/Message/Response.php">
+    <MixedArgument occurrences="3">
+      <code>$fileContent</code>
+      <code>$fileDigest</code>
+      <code>$signature</code>
+    </MixedArgument>
+    <MixedAssignment occurrences="3">
+      <code>$fileContent</code>
+      <code>$fileDigest</code>
+      <code>$signature</code>
+    </MixedAssignment>
+    <MixedMethodCall occurrences="2">
+      <code>getContent</code>
+      <code>getFileDigest</code>
+    </MixedMethodCall>
+    <PropertyNotSetInConstructor occurrences="1">
+      <code>$responseDTO</code>
+    </PropertyNotSetInConstructor>
+    <UndefinedInterfaceMethod occurrences="4">
+      <code>getFile</code>
+      <code>getFile</code>
+      <code>getSignature</code>
+      <code>isFilesExists</code>
+    </UndefinedInterfaceMethod>
+  </file>
+  <file src="src/HttpClient/Message/ResponseMediator.php">
+    <MixedArrayAccess occurrences="2">
+      <code>self::getContent($response)['SOAP-ENV:Body']['SOAP-ENV:Fault']</code>
+      <code>self::getContent($response)['SOAP-ENV:Body'][self::elementWithNamespace($element)]</code>
+    </MixedArrayAccess>
+    <MixedInferredReturnType occurrences="2">
+      <code>?string</code>
+      <code>array</code>
+    </MixedInferredReturnType>
+    <MixedReturnStatement occurrences="2">
+      <code>self::getContent($response)['SOAP-ENV:Body']['SOAP-ENV:Fault']['faultstring']['@content']</code>
+      <code>self::getContent($response)['SOAP-ENV:Body'][self::elementWithNamespace($element)]</code>
+    </MixedReturnStatement>
+  </file>
+  <file src="src/HttpClient/Util/JsonArray.php">
+    <MixedArgument occurrences="1">
+      <code>\get_debug_type($data)</code>
+    </MixedArgument>
+    <UndefinedFunction occurrences="1">
+      <code>\get_debug_type($data)</code>
+    </UndefinedFunction>
+  </file>
+</files>

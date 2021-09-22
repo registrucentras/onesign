@@ -1,0 +1,53 @@
+name: Tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  tests:
+    name: PHP ${{ matrix.php }}
+    runs-on: ubuntu-20.04
+
+    strategy:
+      matrix:
+        php: ['7.4', '8.0']
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          tools: composer:v2
+          coverage: none
+
+      - name: Setup Problem Matchers
+        run: echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
+
+      - name: Install Dependencies
+        uses: nick-invision/retry@v1
+        with:
+          timeout_minutes: 5
+          max_attempts: 5
+          command: composer update --no-interaction --no-progress
+
+      - name: Install PHPUnit
+        uses: nick-invision/retry@v1
+        with:
+          timeout_minutes: 5
+          max_attempts: 5
+          command: composer bin phpunit update --no-interaction --no-progress
+
+      - name: Execute PHPUnit
+        env:
+          ONESIGN_ENPOINT: ${{ secrets.ONESIGN_ENPOINT }}
+          ONESIGN_TEST_USER: ${{ secrets.ONESIGN_TEST_USER }}
+          ONESIGN_PRIVATE_KEY_PASSPHRASE: ${{ secrets.ONESIGN_PRIVATE_KEY_PASSPHRASE }}
+          ONESIGN_PUBLIC_KEY: ${{ secrets.ONESIGN_PUBLIC_KEY }}
+          ONESIGN_PRIVATE_KEY: ${{ secrets.ONESIGN_PRIVATE_KEY }}
+          ONESIGN_TEST_USER_WITHOUT_PASS: ${{ secrets.ONESIGN_TEST_USER_WITHOUT_PASS }}
+          ONESIGN_PRIVATE_KEY_WITHOUT_PASS: ${{ secrets.ONESIGN_PRIVATE_KEY_WITHOUT_PASS }}
+        run: vendor/bin/phpunit

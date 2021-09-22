@@ -1,0 +1,102 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Call to an undefined method RegistruCentras\\\\OneSign\\\\HttpClient\\\\DTO\\\\RequestDTOInterface\\:\\:setTransactionId\\(\\)\\.$#"
+			count: 1
+			path: src/HttpClient/DTO/Request/Adapter/CancelRequestAdapter.php
+
+		-
+			message: "#^Call to an undefined method RegistruCentras\\\\OneSign\\\\HttpClient\\\\DTO\\\\RequestDTOInterface\\:\\:setSignerPersonalCode\\(\\)\\.$#"
+			count: 1
+			path: src/HttpClient/DTO/Request/Adapter/InitRequestAdapter.php
+
+		-
+			message: "#^Call to an undefined method RegistruCentras\\\\OneSign\\\\HttpClient\\\\DTO\\\\RequestDTOInterface\\:\\:setContent\\(\\)\\.$#"
+			count: 1
+			path: src/HttpClient/DTO/Request/Adapter/InitRequestAdapter.php
+
+		-
+			message: "#^Call to an undefined method RegistruCentras\\\\OneSign\\\\HttpClient\\\\DTO\\\\RequestDTOInterface\\:\\:setFile\\(\\)\\.$#"
+			count: 1
+			path: src/HttpClient/DTO/Request/Adapter/InitRequestAdapter.php
+
+		-
+			message: "#^Call to an undefined method RegistruCentras\\\\OneSign\\\\HttpClient\\\\DTO\\\\RequestDTOInterface\\:\\:setLocation\\(\\)\\.$#"
+			count: 1
+			path: src/HttpClient/DTO/Request/Adapter/InitRequestAdapter.php
+
+		-
+			message: "#^Call to an undefined method RegistruCentras\\\\OneSign\\\\HttpClient\\\\DTO\\\\RequestDTOInterface\\:\\:setDisplayValidity\\(\\)\\.$#"
+			count: 1
+			path: src/HttpClient/DTO/Request/Adapter/InitRequestAdapter.php
+
+		-
+			message: "#^Call to an undefined method RegistruCentras\\\\OneSign\\\\HttpClient\\\\DTO\\\\RequestDTOInterface\\:\\:setTransactionId\\(\\)\\.$#"
+			count: 1
+			path: src/HttpClient/DTO/Request/Adapter/ResultRequestAdapter.php
+
+		-
+			message: "#^Call to an undefined method RegistruCentras\\\\OneSign\\\\HttpClient\\\\DTO\\\\RequestDTOInterface\\:\\:setContent\\(\\)\\.$#"
+			count: 1
+			path: src/HttpClient/DTO/Request/Adapter/SealRequestAdapter.php
+
+		-
+			message: "#^Call to an undefined method RegistruCentras\\\\OneSign\\\\HttpClient\\\\DTO\\\\RequestDTOInterface\\:\\:setFile\\(\\)\\.$#"
+			count: 1
+			path: src/HttpClient/DTO/Request/Adapter/SealRequestAdapter.php
+
+		-
+			message: "#^Call to an undefined method RegistruCentras\\\\OneSign\\\\HttpClient\\\\DTO\\\\RequestDTOInterface\\:\\:setSignerPersonalCode\\(\\)\\.$#"
+			count: 1
+			path: src/HttpClient/DTO/Request/Adapter/TimestampRequestAdapter.php
+
+		-
+			message: "#^Call to an undefined method RegistruCentras\\\\OneSign\\\\HttpClient\\\\DTO\\\\RequestDTOInterface\\:\\:setContent\\(\\)\\.$#"
+			count: 1
+			path: src/HttpClient/DTO/Request/Adapter/TimestampRequestAdapter.php
+
+		-
+			message: "#^Call to an undefined method RegistruCentras\\\\OneSign\\\\HttpClient\\\\DTO\\\\RequestDTOInterface\\:\\:setFile\\(\\)\\.$#"
+			count: 1
+			path: src/HttpClient/DTO/Request/Adapter/TimestampRequestAdapter.php
+
+		-
+			message: "#^Call to an undefined method RegistruCentras\\\\OneSign\\\\HttpClient\\\\DTO\\\\ResponseDTOInterface\\:\\:setFileName\\(\\)\\.$#"
+			count: 1
+			path: src/HttpClient/DTO/Response/ResultResponseDTO.php
+
+		-
+			message: "#^Call to an undefined method RegistruCentras\\\\OneSign\\\\HttpClient\\\\DTO\\\\ResponseDTOInterface\\:\\:setFileName\\(\\)\\.$#"
+			count: 1
+			path: src/HttpClient/DTO/Response/SealResponseDTO.php
+
+		-
+			message: "#^Call to an undefined method RegistruCentras\\\\OneSign\\\\HttpClient\\\\DTO\\\\ResponseDTOInterface\\:\\:setFileName\\(\\)\\.$#"
+			count: 1
+			path: src/HttpClient/DTO/Response/TimestampResponseDTO.php
+
+		-
+			message: "#^Call to an undefined method RegistruCentras\\\\OneSign\\\\HttpClient\\\\DTO\\\\ResponseDTOInterface\\:\\:getSignature\\(\\)\\.$#"
+			count: 1
+			path: src/HttpClient/Message/Response.php
+
+		-
+			message: "#^Call to an undefined method RegistruCentras\\\\OneSign\\\\HttpClient\\\\DTO\\\\ResponseDTOInterface\\:\\:isFilesExists\\(\\)\\.$#"
+			count: 1
+			path: src/HttpClient/Message/Response.php
+
+		-
+			message: "#^Call to an undefined method RegistruCentras\\\\OneSign\\\\HttpClient\\\\DTO\\\\ResponseDTOInterface\\:\\:getFile\\(\\)\\.$#"
+			count: 2
+			path: src/HttpClient/Message/Response.php
+
+		-
+			message: "#^Parameter \\#3 \\$priv_key_id of function openssl_sign expects resource\\|string, resource\\|false given\\.$#"
+			count: 1
+			path: src/HttpClient/Util/Signatory.php
+
+		-
+			message: "#^Parameter \\#3 \\$pub_key_id of function openssl_verify expects resource\\|string, resource\\|false given\\.$#"
+			count: 1
+			path: src/HttpClient/Util/Signatory.php
+
