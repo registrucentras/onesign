@@ -1,5 +1,5 @@
 {
-    "name": "gosign/onesign",
+    "name": "registrucentras/onesign",
     "description": "GoSign OneSign API client for PHP",
     "keywords": ["GoSign", "OneSign", "GoSign API", "Elektroninis parašas"],
     "license": "MIT",
