@@ -184,7 +184,7 @@ rezultate gauname:
 * Code styles (PSR-12);
 * PHPDoc standartas (PSR-5, PSR-19);
 * Unit and integration testai;
-* Ištestuota su [Github Actions](https://github.com/odan/slim4-skeleton/actions);
+* Ištestuota su [Github Actions](https://github.com/registrucentras/onesign/actions);
 * [PHPStan](https://github.com/phpstan/phpstan) (Level: max);
 * Docker konteineris su Xdebug palaikymu.
 
