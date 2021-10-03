@@ -92,7 +92,7 @@ $signatureConfiguration = new SignatureConfiguration();
 
 $configuration = (new Configuration())
   ->setResponseUrl('http://example.com/backlink')
-  ->setSigningType(SigningType::SIGNATURE_WITH_TIMESTAMP_OSCP)
+  ->setSigningType(SigningType::SIGNATURE_WITH_TIMESTAMP_OCSP)
   ;
 
 $response = $client
@@ -215,4 +215,3 @@ Paleiskite automatinius testus ir kodo analizės įrankius:
 ```bash
 $ make test
 ```
-s
