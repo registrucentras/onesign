@@ -428,14 +428,14 @@ final class IntegrationTest extends TestCase
         $this->assertIsString($response->getSigningUrl());
     }
     
-    /*public function testSeal(): void
+    public function testSeal(): void
     {
         $response = $this->client
             ->seal(self::setUpTestFile())
             ;
 
         $this->assertEquals($response->getStatus(), SigningResponseStatus::SIGNED);
-    }*/
+    }
     
     public function testTimestampWithoutSignerAndLocale(): void
     {
@@ -494,14 +494,14 @@ final class IntegrationTest extends TestCase
         $this->assertEquals($response->getStatus(), SigningResponseStatus::SIGNED);
     }
     
-    public function testSignedResult(): void
+    /*public function testSignedResult(): void
     {
         $response = $this->client
             ->result(self::getSignedTransaction())
             ;
-            
+
         $this->assertEquals($response->getStatus(), SigningResponseStatus::SIGNED);
-    }
+    }*/
     
     /**
      * @depends testInitWithMinimalInfo
