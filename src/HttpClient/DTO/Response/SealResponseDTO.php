@@ -17,7 +17,6 @@ use Psr\Http\Message\ResponseInterface;
 
 final class SealResponseDTO implements ResponseDTOInterface
 {
-    use WithFileDTO;
     use WithStatusDTO;
     use WithSignatureDTO;
     use Stringable;
@@ -46,7 +45,7 @@ final class SealResponseDTO implements ResponseDTOInterface
                     ;
             
                 $this->setFile($fileDTO);
-                $this->setSignerCertificate((string)\base64_decode($this->response['signerCertificate'], true));
+                $this->setSignerCertificate($this->response['signerCertificate']);
                 $this->setSignerCertificateTrusted($this->response['signerCertificateTrusted']==='true');
                 
                 break;
@@ -100,8 +99,8 @@ final class SealResponseDTO implements ResponseDTOInterface
             'status' => $this->getStatus(),
             'signerCertificate' => $this->getSignerCertificate(),
             'signerCertificateTrusted' => $this->getSignerCertificateTrusted() ? 'true' : 'false',
-            'fileDigest' => $this->getFileDigest(),
-            'fileName' => $this->getFileName(),
+            'fileDigest' => \base64_encode((string)$this->getFile()->getFileDigest()),
+            'fileName' => $this->getFile()->getFileName(),
         ]);
     }
 }
