@@ -14,7 +14,7 @@ final class FileDTO implements RequestDTOInterface
     use WithFileDTO;
     use WithSignatureDTO;
     use StringableWithFile;
-    
+
     public function toArray(): array
     {
         return \array_filter([

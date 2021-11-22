@@ -14,7 +14,7 @@ final class SignatureDisplayPropertiesDTO implements RequestDTOInterface
     use WithSignatureDisplayPropertiesDTO;
     use WithSignatureDTO;
     use Stringable;
-    
+
     public function toArray(): array
     {
         return \array_filter([

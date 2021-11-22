@@ -13,18 +13,18 @@ use RegistruCentras\OneSign\HttpClient\DTO\Request\CancelRequestDTO;
 final class CancelRequestAdapter implements RequestAdapter
 {
     private Client $client;
-    
+
     private Transaction $transaction;
-    
+
     public function __construct(Client $client, Transaction $transaction)
     {
         $this->client = $client;
         $this->transaction = $transaction;
     }
-    
+
     public function toRequestDTO(): RequestDTOInterface
     {
-        
+
         return (new CancelRequestDTO())
             ->setClientId($this->client->getClientId())
             ->setTransactionId($this->transaction->getTransactionId());

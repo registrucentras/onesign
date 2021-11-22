@@ -12,11 +12,11 @@ final class Files
     {
         return \hash('sha1', $content, true);
     }
-    
+
     public static function validateDigest(string $fileContent, string $fileDigest): void
     {
         $tempFileDigest = self::generateFileDigest($fileContent);
-        
+
         if ($fileDigest !== $tempFileDigest) {
             throw new FileValidationFailedException('Can not validate file by file digest!');
         }

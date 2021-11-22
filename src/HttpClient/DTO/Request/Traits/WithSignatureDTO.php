@@ -9,18 +9,18 @@ use RegistruCentras\OneSign\HttpClient\DTO\RequestDTOInterface;
 trait WithSignatureDTO
 {
     private string $signature;
-    
+
     public function setSignature(string $signature): RequestDTOInterface
     {
         $this->signature = $signature;
         return $this;
     }
-    
+
     public function getSignature(): ?string
     {
         return $this->signature;
     }
-    
+
     public function withSignature(string $signature): RequestDTOInterface
     {
         $signatureDTO = clone $this;
@@ -29,7 +29,7 @@ trait WithSignatureDTO
 
         return $signatureDTO;
     }
-    
+
     public function withBased64Signature(string $signature): RequestDTOInterface
     {
         $signatureDTO = clone $this;

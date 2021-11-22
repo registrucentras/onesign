@@ -9,13 +9,13 @@ use RegistruCentras\OneSign\Entity\SignatureConfiguration\DisplayProperties;
 trait WithSignatureInPage
 {
     private int $page;
-    
+
     public function setPage(int $page): DisplayProperties
     {
         $this->page = $page;
         return $this;
     }
-    
+
     public function getPage(): int
     {
         return $this->page;

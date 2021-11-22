@@ -14,9 +14,9 @@ class Cancel extends AbstractApi
     public function __invoke(RequestAdapter $requestAdapter): ResponseDTOInterface
     {
         $httpResponse = $this->makeHttpRequest($this->endpoint, $requestAdapter->toRequestDTO());
-        
+
         $responseDTO = new CancelResponseDTO($httpResponse);
-        
+
         return (new Response($this->getClient()))
             ->get($responseDTO)
             ->toDTO()

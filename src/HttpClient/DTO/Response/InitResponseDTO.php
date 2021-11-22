@@ -19,23 +19,23 @@ final class InitResponseDTO implements ResponseDTOInterface
     use WithSigningUrlDTO;
     use WithSignatureDTO;
     use Stringable;
-    
+
     private array $response;
-    
+
     public function __construct(ResponseInterface $response)
     {
         $this->response = ResponseMediator::getSoapBody($response, 'InitOneSignResponse');
-                
+
         $this->setTransactionId($this->response['transactionId']);
         $this->setSigningUrl($this->response['signingUrl']);
         $this->setSignature((string)\base64_decode($this->response['signature'], true));
     }
-    
+
     public function isFilesExists(): bool
     {
         return false;
     }
-    
+
     public function toArray(): array
     {
         return \array_filter([

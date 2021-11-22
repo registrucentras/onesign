@@ -14,7 +14,7 @@ final class ClientInfoDTO implements RequestDTOInterface
     use WithClientDTO;
     use WithSignatureDTO;
     use Stringable;
-    
+
     public function toArray(): array
     {
         return \array_filter([

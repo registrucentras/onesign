@@ -13,7 +13,7 @@ final class RequestMediator
      * @var string
   */
     public const SOAP_NAMESPACE = 'ones';
-    
+
     private static function generateRoot(): array
     {
         return [
@@ -24,20 +24,20 @@ final class RequestMediator
             ],
         ];
     }
-    
+
     public static function generateRequestRawBody(RequestDTOInterface $requestDTO): string
     {
-        
+
         $array = [
             'soapenv:Header' => [],
             'soapenv:Body' => $requestDTO->toArray(),
         ];
 
         $arrayToXml = new ArrayToXml($array, self::generateRoot());
-        
+
         return $arrayToXml->dropXmlDeclaration()->toXml();
     }
-    
+
     public static function elementWithNamespace(string $element): string
     {
         return \sprintf('%s:%s', self::SOAP_NAMESPACE, $element);

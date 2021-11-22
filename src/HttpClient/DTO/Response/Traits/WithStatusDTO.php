@@ -9,13 +9,13 @@ use RegistruCentras\OneSign\HttpClient\DTO\ResponseDTOInterface;
 trait WithStatusDTO
 {
     private string $status;
-    
+
     public function setStatus(string $status): ResponseDTOInterface
     {
         $this->status = $status;
         return $this;
     }
-    
+
     public function getStatus(): ?string
     {
         return $this->status;

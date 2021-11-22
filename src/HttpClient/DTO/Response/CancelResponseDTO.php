@@ -18,12 +18,12 @@ use Fig\Http\Message\StatusCodeInterface;
 final class CancelResponseDTO implements ResponseDTOInterface
 {
     use WithStatusDTO;
-    
+
     public function __construct(ResponseInterface $response)
     {
-        
+
         $httpStatus = ResponseMediator::getStatus($response);
-        
+
         switch ($httpStatus) {
             case StatusCodeInterface::STATUS_ACCEPTED:
                 $this->setStatus(CancelSigningResponseStatus::CANCELED);
@@ -33,21 +33,21 @@ final class CancelResponseDTO implements ResponseDTOInterface
                 break;
         }
     }
-    
+
     public function isFilesExists(): bool
     {
         return false;
     }
-    
+
     public function __toString(): string
     {
         $array = $this->toArray();
-        
+
         $arrayToXml = new ArrayToXml($array);
-        
+
         return \preg_replace("/<\\/?root(\\s+.*?>|>)/", "", $arrayToXml->dropXmlDeclaration()->toXml());
     }
-    
+
     public function toArray(): array
     {
         return [];

@@ -10,7 +10,7 @@ trait WithTestClient
 {
     public static function setUpTestClient(): Client
     {
-        
+
         $client = new Client();
 
         $client->configure(
@@ -20,13 +20,13 @@ trait WithTestClient
             \getenv('ONESIGN_PRIVATE_KEY_PASSPHRASE'),
             \str_replace('||', "\n", \getenv('ONESIGN_PUBLIC_KEY'))
         );
-        
+
         return $client;
     }
-    
+
     public static function setUpTestClientWithoutPass(): Client
     {
-        
+
         $client = new Client();
 
         $client->configure(
@@ -36,7 +36,7 @@ trait WithTestClient
             '',
             \str_replace('||', "\n", \getenv('ONESIGN_PUBLIC_KEY'))
         );
-        
+
         return $client;
     }
 }

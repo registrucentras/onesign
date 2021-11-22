@@ -11,12 +11,12 @@ use Psr\Http\Message\RequestInterface;
 final class SoapRequest implements Plugin
 {
     private string $soapAction;
-    
+
     public function __construct(string $soapAction)
     {
         $this->soapAction = $soapAction;
     }
-    
+
     public function handleRequest(RequestInterface $request, callable $next, callable $first): Promise
     {
         $request = $request

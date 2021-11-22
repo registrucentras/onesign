@@ -12,12 +12,12 @@ trait WithNoVisibleSignature
     {
         return false;
     }
-     
+
     public function getSignatureImageUrl(): ?string
     {
         return null;
     }
-     
+
     public function getBackgroundImageUrl(): ?string
     {
         return null;

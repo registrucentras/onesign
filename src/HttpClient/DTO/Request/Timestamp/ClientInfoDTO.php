@@ -16,20 +16,20 @@ final class ClientInfoDTO implements RequestDTOInterface
     use WithLocaleDTO;
     use WithSignatureDTO;
     use Stringable;
-    
+
     private ?string $signerPersonalCode = null;
-    
+
     public function setSignerPersonalCode(?string $signerPersonalCode): RequestDTOInterface
     {
         $this->signerPersonalCode = $signerPersonalCode;
         return $this;
     }
-    
+
     public function getSignerPersonalCode(): ?string
     {
         return $this->signerPersonalCode;
     }
-    
+
     public function toArray(): array
     {
         return \array_filter([

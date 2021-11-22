@@ -17,14 +17,14 @@ trait WithTestConfiguration
             ->setSigningType(SigningType::SIGNATURE)
             ;
     }
-    
+
     public static function setUpTestConfigurationWithLocale(string $locale): Configuration
     {
         return (new Configuration())
             ->setLocale($locale)
             ;
     }
-    
+
     public static function setUpTestEmptyConfiguration(): Configuration
     {
         return new Configuration();

@@ -11,19 +11,19 @@ use RegistruCentras\OneSign\HttpClient\DTO\Response\Traits\WithFileDTO;
 final class FileDTO implements ResponseDTOInterface
 {
     use WithFileDTO;
-    
+
     public function __toString(): string
     {
-        
+
         $array = $this->toArray();
-        
+
         unset($array['content']);
-        
+
         $arrayToXml = new ArrayToXml($array);
-        
+
         return \preg_replace("/<\\/?root(\\s+.*?>|>)/", "", $arrayToXml->dropXmlDeclaration()->toXml());
     }
-    
+
     public function toArray(): array
     {
         return \array_filter([

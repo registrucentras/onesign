@@ -13,33 +13,33 @@ use RegistruCentras\OneSign\HttpClient\DTO\Request\Traits\WithSignatureDTO;
 final class SealRequestDTO implements RequestDTOInterface
 {
     use WithSignatureDTO;
-    
+
     private RequestDTOInterface $clientInfo;
-    
+
     private FileDTO $file;
-    
+
     public function setClientInfo(RequestDTOInterface $clientInfo): RequestDTOInterface
     {
         $this->clientInfo = $clientInfo;
         return $this;
     }
-    
+
     public function getClientInfo(): RequestDTOInterface
     {
         return $this->clientInfo;
     }
-    
+
     public function setFile(FileDTO $file): RequestDTOInterface
     {
         $this->file = $file;
         return $this;
     }
-    
+
     public function getFile(): FileDTO
     {
         return $this->file;
     }
-    
+
     public function __toString(): string
     {
         return \sprintf(
@@ -48,7 +48,7 @@ final class SealRequestDTO implements RequestDTOInterface
             (string)$this->file
         );
     }
-    
+
     public function toArray(): array
     {
         return [

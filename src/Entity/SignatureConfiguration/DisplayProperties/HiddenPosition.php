@@ -10,7 +10,7 @@ use RegistruCentras\OneSign\Entity\SignatureConfiguration\DisplayProperties\Trai
 final class HiddenPosition implements DisplayProperties
 {
     use WithNoVisibleSignature;
-    
+
     public function getPosition(): string
     {
         return 'hidden';
