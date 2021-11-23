@@ -14,7 +14,7 @@ final class SignatureMetadataDTO implements RequestDTOInterface
     use WithSignatureMetadataDTO;
     use WithSignatureDTO;
     use Stringable;
-    
+
     public function toArray(): array
     {
         return \array_filter([

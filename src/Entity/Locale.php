@@ -10,7 +10,7 @@ final class Locale extends AbstractEntity implements EntityInterface
      * @var string
   */
     public const LT = 'LT';
-    
+
     /**
      * @var string
   */

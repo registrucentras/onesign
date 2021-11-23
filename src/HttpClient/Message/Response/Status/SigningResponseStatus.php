@@ -10,12 +10,12 @@ final class SigningResponseStatus
      * @var string
   */
     public const SIGNED = 'Signed';
-    
+
     /**
      * @var string
   */
     public const CANCELED = 'Canceled';
-    
+
     /**
      * @var string
   */

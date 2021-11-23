@@ -21,7 +21,7 @@ final class ExceptionThrower implements Plugin
     {
         return $next($request)->then(function (ResponseInterface $response): ResponseInterface {
             $status = $response->getStatusCode();
-            
+
             if ($status >= 400 && $status < 600) {
                 throw self::createException($response);
             }
@@ -33,21 +33,21 @@ final class ExceptionThrower implements Plugin
     private static function createException(ResponseInterface $response): ExceptionInterface
     {
         $status = $response->getStatusCode();
-        
+
         if (400 === $status || 422 === $status) {
             $errorMessage = ResponseMediator::getErrorMessage($response) ?? $response->getReasonPhrase();
-            
+
             return new ValidationFailedException($errorMessage, $status);
         }
-        
+
         if (500 === $status) {
             $errorMessage = ResponseMediator::getSoapErrorMessage($response) ?? $response->getReasonPhrase();
-            
+
             return new SoapErrorException($errorMessage, $status);
         }
-        
+
         $errorMessage =  ResponseMediator::getErrorMessage($response) ?? $response->getReasonPhrase();
-        
+
         return new RuntimeException($errorMessage, $status);
     }
 }

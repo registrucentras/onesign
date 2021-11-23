@@ -10,7 +10,7 @@ final class RelativeX
      * @var int
      */
     public const LEFT = 0;
-    
+
     /**
      * @var float
    */

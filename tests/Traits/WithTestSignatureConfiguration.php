@@ -20,34 +20,34 @@ trait WithTestSignatureConfiguration
         return (new SignatureConfiguration())
             ;
     }
-    
+
     public static function setUpTestSignatureConfigurationWithMetadata(): SignatureConfiguration
     {
-        
+
         $metadata = (new Metadata())
             ->setReason('Fake reason')
             ->setLocation('Vilnius')
             ->setContact('Registų centras')
             ;
-        
+
         return (new SignatureConfiguration())
             ->setMetadata($metadata)
             ;
     }
-    
+
     public static function setUpTestSignatureConfigurationWithHiddenPosition(): SignatureConfiguration
     {
-        
+
         $hiddenPosition = new HiddenPosition();
-        
+
         return (new SignatureConfiguration())
             ->setDisplayProperties($hiddenPosition)
             ;
     }
-    
+
     public static function setUpTestSignatureConfigurationWithRelativePositionInLeftAndTop(): SignatureConfiguration
     {
-        
+
         $relativePosition = (new RelativePosition())
             ->setPage(1)
             ->setX(RelativeX::LEFT)
@@ -55,15 +55,15 @@ trait WithTestSignatureConfiguration
             ->setWidth('8cm')
             ->setHeight('4cm')
             ;
-        
+
         return (new SignatureConfiguration())
             ->setDisplayProperties($relativePosition)
             ;
     }
-    
+
     public static function setUpTestSignatureConfigurationWithRelativePositionInCenter(): SignatureConfiguration
     {
-        
+
         $relativePosition = (new RelativePosition())
             ->setPage(1)
             ->setX(RelativeX::CENTER)
@@ -71,15 +71,15 @@ trait WithTestSignatureConfiguration
             ->setWidth('8cm')
             ->setHeight('4cm')
             ;
-        
+
         return (new SignatureConfiguration())
             ->setDisplayProperties($relativePosition)
             ;
     }
-    
+
     public static function setUpTestSignatureConfigurationWithAbsolutePosition(): SignatureConfiguration
     {
-        
+
         $absolutePosition = (new AbsolutePosition())
             ->setPage(1)
             ->setX('2cm')
@@ -87,19 +87,19 @@ trait WithTestSignatureConfiguration
             ->setWidth('8cm')
             ->setHeight('4cm')
             ;
-        
+
         return (new SignatureConfiguration())
             ->setDisplayProperties($absolutePosition)
             ;
     }
-    
+
     public static function setUpTestSignatureConfigurationWithNamedPosition(): SignatureConfiguration
     {
-        
+
         $namedPosition = (new NamedPosition())
             ->setFieldName('signature1')
             ;
-        
+
         return (new SignatureConfiguration())
             ->setDisplayProperties($namedPosition)
             ;

@@ -9,13 +9,13 @@ use RegistruCentras\OneSign\HttpClient\DTO\ResponseDTOInterface;
 trait WithSignatureDTO
 {
     private ?string $signature = null;
-    
+
     public function setSignature(?string $signature): ResponseDTOInterface
     {
         $this->signature = $signature;
         return $this;
     }
-    
+
     public function getSignature(): ?string
     {
         return $this->signature;

@@ -9,13 +9,13 @@ use RegistruCentras\OneSign\HttpClient\DTO\ResponseDTOInterface;
 trait WithTransactionDTO
 {
     private string $transactionId;
-    
+
     public function setTransactionId(string $transactionId): ResponseDTOInterface
     {
         $this->transactionId = $transactionId;
         return $this;
     }
-    
+
     public function getTransactionId(): ?string
     {
         return $this->transactionId;

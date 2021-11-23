@@ -10,7 +10,7 @@ final class CancelSigningResponseStatus
      * @var string
   */
     public const CANCELED = 'Canceled';
-    
+
     /**
      * @var string
   */

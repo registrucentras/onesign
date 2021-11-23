@@ -18,13 +18,13 @@ use RegistruCentras\OneSign\HttpClient\DTO\Request\Timestamp\FileDTO;
 final class TimestampRequestAdapter implements RequestAdapter
 {
     private Client $client;
-    
+
     private Signer $signer;
-    
+
     private File $file;
-    
+
     private Configuration $configuration;
-    
+
     public function __construct(Client $client, Signer $signer, File $file, Configuration $configuration)
     {
         $this->client = $client;
@@ -32,21 +32,21 @@ final class TimestampRequestAdapter implements RequestAdapter
         $this->file = $file;
         $this->configuration = $configuration;
     }
-    
+
     public function toRequestDTO(): RequestDTOInterface
     {
-        
+
         $clientInfo = (new ClientInfoDTO())
             ->setClientId($this->client->getClientId())
             ->setSignerPersonalCode($this->signer->getPersonalCode())
             ->setLocale($this->configuration->getLocale())
             ;
-            
+
         $file = (new FileDTO())
             ->setFileName($this->file->getName())
             ->setContent($this->file->getContent())
             ;
-        
+
         return (new TimestampRequestDTO())
             ->setClientInfo($clientInfo)
             ->setFile($file->withFileDigest(Files::generateFileDigest($file->getContent())));

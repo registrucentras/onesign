@@ -14,13 +14,13 @@ trait WithTestTransaction
             ->setTransactionId($transactionId)
             ;
     }
-    
+
     public static function setUpTestRandomTransaction(): Transaction
     {
         return self::setUpTestTransaction((string)\random_int(111111, 999999))
             ;
     }
-    
+
     public static function getSignedTransaction(): Transaction
     {
         return self::setUpTestTransaction('455371')

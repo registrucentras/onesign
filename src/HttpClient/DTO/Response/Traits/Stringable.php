@@ -10,11 +10,11 @@ trait Stringable
 {
     public function __toString(): string
     {
-        
+
         $array = $this->toArray();
-        
+
         $arrayToXml = new ArrayToXml($array);
-        
+
         return \preg_replace("/<\\/?root(\\s+.*?>|>)/", "", $arrayToXml->dropXmlDeclaration()->toXml());
     }
 }

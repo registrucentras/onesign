@@ -15,7 +15,7 @@ final class ResultRequestDTO implements RequestDTOInterface
     use WithClientDTO;
     use WithTransactionDTO;
     use WithSignatureDTO;
-    
+
     public function __toString(): string
     {
         return \sprintf(
@@ -24,7 +24,7 @@ final class ResultRequestDTO implements RequestDTOInterface
             (string)$this->getTransactionId()
         );
     }
-    
+
     public function toArray(): array
     {
         return [

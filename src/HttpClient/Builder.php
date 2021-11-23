@@ -78,7 +78,7 @@ final class Builder
     public function addCache(CacheItemPoolInterface $cachePool, array $config = []): void
     {
         $headerTypes = ['Authorization', 'Cookie', 'Accept', 'Content-type'];
-        
+
         if (!isset($config['cache_key_generator'])) {
             $config['cache_key_generator'] = new HeaderCacheKeyGenerator($headerTypes);
         }
@@ -92,16 +92,16 @@ final class Builder
         $this->cachePlugin = null;
         $this->pluginClient = null;
     }
-    
+
     public function getRequestFactory(): RequestFactoryInterface
     {
-        
+
         return $this->requestFactory;
     }
-    
+
     public function getStreamFactory(): StreamFactoryInterface
     {
-        
+
         return $this->streamFactory;
     }
 }

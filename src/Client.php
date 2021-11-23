@@ -30,17 +30,17 @@ use Psr\Http\Message\ResponseInterface;
 class Client
 {
     private Builder $httpClientBuilder;
-    
+
     private string $clientId;
-    
+
     private string $privateKey;
-    
+
     private string $passphrase;
-    
+
     private string $publicKey;
-    
+
     private string $apiEndpointUrl = '';
-    
+
     public function __construct(Builder $httpClientBuilder = null)
     {
         $this->httpClientBuilder = $builder = $httpClientBuilder ?? new Builder();
@@ -62,45 +62,45 @@ class Client
         Configuration $configuration
     ): ResponseDTOInterface {
         $this->httpClientBuilder->addPlugin(new SoapRequest('InitSigning'));
-        
+
         $initRequestAdapter = new InitRequestAdapter($this, $signer, $file, $signatureConfiguration, $configuration);
-        
+
         return (new Init($this))($initRequestAdapter);
     }
 
     public function result(Transaction $transaction): ResponseDTOInterface
     {
         $this->httpClientBuilder->addPlugin(new SoapRequest('SigningResult'));
-        
+
         $resultRequestAdapter = new ResultRequestAdapter($this, $transaction);
-        
+
         return (new Result($this))($resultRequestAdapter);
     }
 
     public function cancel(Transaction $transaction): ResponseDTOInterface
     {
         $this->httpClientBuilder->addPlugin(new SoapRequest('SigningCancel'));
-        
+
         $resultRequestAdapter = new CancelRequestAdapter($this, $transaction);
-        
+
         return (new Cancel($this))($resultRequestAdapter);
     }
-    
+
     public function timestamp(Signer $signer, File $file, Configuration $configuration): ResponseDTOInterface
     {
         $this->httpClientBuilder->addPlugin(new SoapRequest('Timestamp'));
-        
+
         $timestampRequestAdapter = new TimestampRequestAdapter($this, $signer, $file, $configuration);
-        
+
         return (new Timestamp($this))($timestampRequestAdapter);
     }
-    
+
     public function seal(File $file): ResponseDTOInterface
     {
         $this->httpClientBuilder->addPlugin(new SoapRequest('Seal'));
-        
+
         $sealRequestAdapter = new SealRequestAdapter($this, $file);
-        
+
         return (new Seal($this))($sealRequestAdapter);
     }
 
@@ -117,28 +117,28 @@ class Client
         $this->passphrase = $passphrase;
         $this->publicKey = $publicKey;
     }
-    
+
     public function getApiEndpointUrl(): string
     {
         return $this->apiEndpointUrl;
     }
-    
+
     public function getClientId(): string
     {
         return $this->clientId;
     }
-    
-    
+
+
     public function getPrivateKey(): string
     {
         return $this->privateKey;
     }
-    
+
     public function getPublicKey(): string
     {
         return $this->publicKey;
     }
-    
+
     public function getPassphrase(): string
     {
         return $this->passphrase;

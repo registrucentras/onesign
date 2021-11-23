@@ -21,7 +21,7 @@ final class MockedClient
 
     private static function createResponseFactory(ResponseInterface $response): ResponseFactoryInterface
     {
-        return new class($response) implements ResponseFactoryInterface {
+        return new class ($response) implements ResponseFactoryInterface {
             private $response;
 
             public function __construct(ResponseInterface $response)

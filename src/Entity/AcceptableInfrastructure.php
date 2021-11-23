@@ -10,7 +10,7 @@ final class AcceptableInfrastructure extends AbstractEntity implements EntityInt
      * @var string
   */
     public const MOBILE = 'Mobile';
-    
+
     /**
      * @var string
   */

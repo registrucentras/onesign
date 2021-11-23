@@ -14,7 +14,7 @@ trait WithTestSigner
             ->setPersonalCode($personalCode)
             ;
     }
-    
+
     public static function setUpTestWithoutSigner(): Signer
     {
         return (new Signer())

@@ -10,7 +10,7 @@ final class RelativeY
      * @var int
      */
     public const TOP = 0;
-    
+
     /**
      * @var float
    */

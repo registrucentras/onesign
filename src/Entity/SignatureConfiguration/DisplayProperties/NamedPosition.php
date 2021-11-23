@@ -10,20 +10,20 @@ use RegistruCentras\OneSign\Entity\SignatureConfiguration\DisplayProperties\Trai
 final class NamedPosition implements DisplayProperties
 {
     use WithVisibleSignature;
-    
+
     private string $fieldName;
-    
+
     public function getPosition(): string
     {
         return \sprintf('named, %s', $this->getFieldName());
     }
-     
+
     public function setFieldName(string $fieldName): DisplayProperties
     {
         $this->fieldName = $fieldName;
         return $this;
     }
-    
+
     public function getFieldName(): string
     {
         return $this->fieldName;

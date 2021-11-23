@@ -27,39 +27,39 @@ final class IntegrationSmokeTest extends TestCase
     use WithTestConfiguration;
     use WithTestTransaction;
     use WithTestSignatureConfiguration;
-    
+
     protected Client $client;
-    
+
     protected function setUp(): void
     {
         $this->client = self::setUpTestClient();
     }
-    
+
     public function testResultWithNotExistsTransactionId(): void
     {
         $this->expectException(SoapErrorException::class);
         $this->expectExceptionMessage('Invalid transaction ID.');
-        
+
         $response = $this->client
             ->result(self::setUpTestRandomTransaction())
             ;
     }
-    
+
     public function testCancelWithNotExistsTransactionId(): void
     {
         $this->expectException(SoapErrorException::class);
         $this->expectExceptionMessage('Invalid transaction ID.');
-        
+
         $response = $this->client
             ->cancel(self::setUpTestRandomTransaction())
             ;
     }
-    
+
     public function testInitWithMinimalInfoRelativePositionAndSignatureAsNotExistsImage(): void
     {
         $noSigner = self::setUpTestWithoutSigner();
         $testFile = self::setUpTestFile();
-        
+
         $relativePosition = (new RelativePosition())
             ->setPage(1)
             ->setX(RelativeX::CENTER)
@@ -70,19 +70,19 @@ final class IntegrationSmokeTest extends TestCase
             ->setSignatureImageUrl('https://www.registrucentras.lt/img/logo/rcrc.jpg')
             ->setBackgroundImageUrl('https://www.registrucentras.lt/img/logo/rcrc.jpg')
             ;
-        
+
         $signatureConfiguration = (new SignatureConfiguration())
             ->setDisplayProperties($relativePosition)
             ;
-            
+
         $configuration = self::setUpTestConfiguration();
-        
+
         $response = $this->client
             ->init($noSigner, $testFile, $signatureConfiguration, $configuration)
             ;
-            
+
         $this->assertIsString($response->getTransactionId());
-        
+
         $this->assertIsString($response->getSigningUrl());
     }
 }
