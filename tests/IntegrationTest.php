@@ -428,14 +428,14 @@ final class IntegrationTest extends TestCase
         $this->assertIsString($response->getSigningUrl());
     }
 
-    public function testSeal(): void
+    /*public function testSeal(): void
     {
         $response = $this->client
             ->seal(self::setUpTestFile())
             ;
 
         $this->assertEquals($response->getStatus(), SigningResponseStatus::SIGNED);
-    }
+    }*/
 
     public function testTimestampWithoutSignerAndLocale(): void
     {
