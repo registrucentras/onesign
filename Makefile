@@ -26,15 +26,9 @@ phpcbf:
 psalm-show-info:
 	@docker run -it -w /data -v ${PWD}:/data:delegated --entrypoint vendor/bin/psalm.phar --rm ghcr.io/benycode/php:7.4-cli --show-info=true
 
-rector-dry-run:
-	@docker run -it -w /data -v ${PWD}:/data:delegated --entrypoint vendor/bin/rector --rm ghcr.io/benycode/php:7.4-cli process --dry-run
+fix: phpcbf
 
-rector-fix:
-	@docker run -it -w /data -v ${PWD}:/data:delegated --entrypoint vendor/bin/rector --rm ghcr.io/benycode/php:7.4-cli process
-
-fix: rector-dry-run phpcbf
-
-test: phpunit phpstan-analyze psalm-analyze rector-dry-run phpcbf phpcs
+test: phpunit phpstan-analyze psalm-analyze phpcbf phpcs
 
 clean:
 	@rm -rf .phpunit.result.cache composer.lock vendor vendor-bin/*/composer.lock vendor-bin/*/vendor
