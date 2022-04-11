@@ -8,8 +8,6 @@ use RegistruCentras\OneSign\HttpClient\DTO\RequestDTOInterface;
 
 trait WithSignatureDisplayPropertiesDTO
 {
-
-
     private ?string $position = null;
 
     private bool $displayValidity = false;

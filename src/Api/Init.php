@@ -11,7 +11,6 @@ use RegistruCentras\OneSign\HttpClient\Message\Response;
 
 class Init extends AbstractApi
 {
-
     public function __invoke(RequestAdapter $requestAdapter): ResponseDTOInterface
     {
         $httpResponse = $this->makeHttpRequest($this->endpoint, $requestAdapter->toRequestDTO());

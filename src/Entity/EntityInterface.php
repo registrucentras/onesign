@@ -6,5 +6,4 @@ namespace RegistruCentras\OneSign\Entity;
 
 interface EntityInterface
 {
-
 }
