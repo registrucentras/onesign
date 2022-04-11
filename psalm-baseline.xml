@@ -437,6 +437,9 @@
       <code>getSignature</code>
       <code>isFilesExists</code>
     </UndefinedInterfaceMethod>
+    <UnusedVariable occurrences="1">
+      <code>$publicKey</code>
+    </UnusedVariable>
   </file>
   <file src="src/HttpClient/Message/ResponseMediator.php">
     <MixedArrayAccess occurrences="2">
