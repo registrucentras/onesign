@@ -142,7 +142,7 @@ $fileName = $response->getFile()->getFileName();
 ```
 gaukite pasirašyto failo turinį:
 ```php
-$fileContent = $response->getFile()->geContent();
+$fileContent = $response->getFile()->getContent();
 ```
 - `signerCertificate` - asmens, kuris pasirašė dokumentą, sertifikatas;
 ```php
