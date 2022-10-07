@@ -48,9 +48,9 @@ kaip generuoti raktus pateikiama [raktų generavimo instrukcijoje](https://regis
 $client->configure(
   'api_endpoint_adresas',
   'jums_suteiktas_id',
-  \file_get_contents(__DIR__ . '/../Keys/private.key'),
+  \file_get_contents(__DIR__ . '/../Keys/private.key'), // jūsų sugeneruotas private raktas
   'private_key_passprahse',
-  \file_get_contents(__DIR__ . '/../Keys/public.key')
+  \file_get_contents(__DIR__ . '/../Keys/public.key') // jums perduotas public raktas GoSign.lt administratoriaus
 );
 ```
 
