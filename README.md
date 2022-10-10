@@ -133,6 +133,12 @@ $status = $response->getStatus();
 rezultate gauname:
 - `status` - pasirašymo transakcijos būsena (`SigningResponseStatus::IN_PROGRESS` - pasirašymas inicijuotas, laukiama dokumento pasirašymo, `SigningResponseStatus::SIGNED` - dokumentas pasirašytas, `SigningResponseStatus::CANCELED` - dokumento pasirašymas buvo nutrauktas);
 
+prie `SigningResponseStatus::IN_PROGRESS` pateikiamas papildomas parametras:
+- `signerCertificate` - asmens, kuris pasirašo dokumentą, sertifikatas;
+```php
+$signerCertificate = $response->getSignerCertificate();
+```
+
 prie `SigningResponseStatus::SIGNED` pateikiami papildomi parametrai:
 - `file` - failo esybės objektas;
 
