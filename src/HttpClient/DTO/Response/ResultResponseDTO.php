@@ -48,7 +48,12 @@ final class ResultResponseDTO implements ResponseDTOInterface
                 $this->setSignerCertificateTrusted($this->response['signerCertificateTrusted'] === 'true');
                 break;
             case SigningResponseStatus::IN_PROGRESS:
-                $this->setSignerCertificate($this->response['signerCertificate']);
+                $signerCertificate = isset($this->response['signerCertificate']) ? $this->response['signerCertificate']: null;
+
+                if($signerCertificate !== null){
+                    $this->setSignerCertificate($this->response['signerCertificate']);
+                }
+                
                 $this->setSignerCertificateTrusted(false);
                 break;
             default:
