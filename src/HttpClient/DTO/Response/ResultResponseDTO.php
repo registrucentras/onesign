@@ -47,6 +47,10 @@ final class ResultResponseDTO implements ResponseDTOInterface
                 $this->setSignerCertificate($this->response['signerCertificate']);
                 $this->setSignerCertificateTrusted($this->response['signerCertificateTrusted'] === 'true');
                 break;
+            case SigningResponseStatus::IN_PROGRESS:
+                $this->setSignerCertificate($this->response['signerCertificate']);
+                $this->setSignerCertificateTrusted(false);
+                break;
             default:
                 $this->setSignerCertificateTrusted(false);
                 break;
@@ -108,6 +112,10 @@ final class ResultResponseDTO implements ResponseDTOInterface
                 'signerCertificateTrusted' => $this->getSignerCertificateTrusted() ? 'true' : 'false',
                 'fileDigest' => \base64_encode((string)$this->getFile()->getFileDigest()),
                 'fileName' => $this->getFile()->getFileName(),
+            ];
+        } else if($this->getStatus() === SigningResponseStatus::IN_PROGRESS) {
+            $signedArray = [
+                'signerCertificate' => $this->getSignerCertificate(),
             ];
         }
 
