@@ -15,4 +15,14 @@ final class AcceptableInfrastructure extends AbstractEntity implements EntityInt
      * @var string
   */
     public const STATIONARY = 'Stationary';
+
+    /**
+     * @var string
+  */
+    public const RAS_PERSON = 'RasPerson';
+
+    /**
+    * @var string
+  */
+    public const RAS_COMPANY = 'RasCompany';
 }
