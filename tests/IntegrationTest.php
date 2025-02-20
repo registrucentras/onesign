@@ -437,6 +437,50 @@ final class IntegrationTest extends TestCase
         $this->assertEquals($response->getStatus(), SigningResponseStatus::SIGNED);
     }*/
 
+    // RasPerson test
+
+    public function testInitWithMinimalInfoRasPersonSigning(): string
+    {
+        $noSigner = self::setUpTestWithoutSigner();
+        $testFile = self::setUpTestFile();
+        $signatureConfiguration = self::setUpTestEmptySignatureConfiguration();
+
+        $configuration = (new Configuration())
+            ->setResponseUrl('http://aaaa')
+            ->setAcceptableInfrastructure(AcceptableInfrastructure::RAS_PERSON)
+            ->setSigningType(SigningType::SIGNATURE);
+
+        $response = $this->client
+            ->init($noSigner, $testFile, $signatureConfiguration, $configuration);
+
+        $this->assertIsString($response->getTransactionId());
+        $this->assertIsString($response->getSigningUrl());
+
+        return $response->getTransactionId();
+    }
+
+    // RasCompany test
+
+    public function testInitWithMinimalInfoRasCompanySigning(): string
+    {
+        $noSigner = self::setUpTestWithoutSigner();
+        $testFile = self::setUpTestFile();
+        $signatureConfiguration = self::setUpTestEmptySignatureConfiguration();
+
+        $configuration = (new Configuration())
+            ->setResponseUrl('http://aaaa')
+            ->setAcceptableInfrastructure(AcceptableInfrastructure::RAS_COMPANY)
+            ->setSigningType(SigningType::SIGNATURE);
+
+        $response = $this->client
+            ->init($noSigner, $testFile, $signatureConfiguration, $configuration);
+
+        $this->assertIsString($response->getTransactionId());
+        $this->assertIsString($response->getSigningUrl());
+
+        return $response->getTransactionId();
+    }   
+
     public function testTimestampWithoutSignerAndLocale(): void
     {
         $response = $this->client
