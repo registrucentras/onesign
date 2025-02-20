@@ -21,7 +21,7 @@ Norėdami greitai integruoti šią biblioteką į savo PHP projektą naudokite [
 ### Standartinis diegimas
 
 ```bash
-$ composer require "registrucentras/onesign:^1.1.3"
+$ composer require "registrucentras/onesign:^1.2.0"
 ```
 
 ## Naudojimas
